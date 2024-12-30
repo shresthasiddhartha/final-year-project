@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Gym Template" />
+    <meta name="keywords" content="Gym, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  	<title>Zest Attendance</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/barfiller.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+   <style>
+    .attendance-info {
+      margin-top: 10px;
+      width: 65%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .attendance-info h3 {
+      font-size: 22px;
+      color: black;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .calendar div {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .calendar div.disabled {
+      background-color: #f1f1f1;
+      cursor: not-allowed;
+    }
+
+    .calendar div.checked {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .calendar div.checked:before {
+      content: "\2713";
+      /* Unicode checkmark */
+      color: white;
+    }
+
+    .attendance-info {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .attendance-info h3 {
+      margin-bottom: 15px;
+    }
+
+    .attendance-btn {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .attendance-btn:hover {
+      background-color: #45a049;
+    }
+
+    .section-title h2 {
+      margin-bottom: 10px;
+    }
+
+    .calendar {
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .toast {
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+      <div class="canvas-close">
+        <i class="fa fa-close"></i>
+      </div>
+      <div class="canvas-search search-switch">
+        <i class="fa fa-search"></i>
+      </div>
+      <nav class="canvas-menu mobile-menu">
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="membership">Membership</a></li>
+          <li><a href="attendance">Attendance</a></li>
+          <li>
+            <a href="#">Activities</a>
+            <ul class="dropdown">
+              <li><a href="class-timetable">Schedules</a></li>
+              <li><a href="bmi-calculator">BMI Calculator</a></li>
+              <li><a href="activities">My Activities</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Workout</a>
+            <ul class="dropdown">
+              <li><a href="video">Video Tutorial</a></li>
+              <li><a href="class-timetable">Workouts</a></li>
+              <li><a href="diet">Diet</a></li>
+              <!-- <li><a href="./404.html">404</a></li> -->
+            </ul>
+          </li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="profile"> Profile </a></li>
+        </ul>
+      </nav>
+      <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu Section End -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="logo">
+              <a href="./index.html">
+                <img src="img/logo.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="nav-menu">
+		        <ul>
+		          <li><a href="index">Home</a></li>
+		          <li><a href="membership">Membership</a></li>
+		          <li><a href="attendance">Attendance</a></li>
+		          <li>
+		            <a href="#">Activities</a>
+		            <ul class="dropdown">
+		              <li><a href="class-timetable">Schedules</a></li>
+		              <li><a href="bmi-calculator">BMI Calculator</a></li>
+		              <li><a href="activities">My Activities</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <a href="#">Workout</a>
+		            <ul class="dropdown">
+		              <li><a href="video">Video Tutorial</a></li>
+		              <li><a href="class-timetable">Workouts</a></li>
+		              <li><a href="diet">Diet</a></li>
+		              <!-- <li><a href="./404.html">404</a></li> -->
+		            </ul>
+		          </li>
+		          <li><a href="contact">Contact</a></li>
+		          <li><a href="profile"> Profile </a></li>
+		        </ul>
+		      </nav>
+          </div>
+          <div class="col-lg-3">
+            <div class="top-option">
+              <div class="to-search search-switch">
+                <i class="fa fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="canvas-open">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section
+      class="breadcrumb-section set-bg"
+      data-setbg="img/breadcrumb-bg.jpg"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="breadcrumb-text">
+              <h2>BMI calculator</h2>
+              <div class="bt-option">
+                <a href="index">Home</a>
+                <a href="#">Pages</a>
+                <span>BMI calculator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- BMI Calculator Section Begin -->
+<div class="container">
+    <div class="row attendance-wrapper mt-5 mb-5">
+      <!-- Attendance Info Section -->
+      <div class="col-lg-5">
+        <div class="attendance-info">
+          <h3>Attendance Information</h3>
+          <p>
+            <strong>Total Check-ins:</strong>
+            <span id="totalCheckins" th:text="${presentDays}"></span> days
+          </p>
+          <p><strong>Streak:</strong> <span id="streak" th:text="${streak}" ></span> days</p>
+          
+          <p>
+            <strong>Absent Days:</strong> <span id="absentDays" th:text="${absentDays}"></span> days
+          </p>
+          <p>
+            <strong>Total Days:</strong> <span id="absentDays" th:text="${totalDaysInMonth}"></span> days
+          </p>
+       		<form action="/attendance" method="POST">
+		    <button type="submit" class="attendance-btn" id="checkInBtn"
+		            th:disabled="${attendanceStatus == 'Present'}"
+		            th:text="${attendanceStatus == 'Present' ? 'Already Checked In' : 'Check In'}">
+			    </button>
+			</form>
+
+        </div>
+      </div>
+
+      <!-- Calendar Section -->
+      <div class="col-lg-7">
+        <div class="section-title">
+          <h2 style="color: black">Calendar</h2>
+         
+        </div>
+
+        <!-- Message Section -->
+        <div id="checkinMessage" style="color: red; margin-bottom: 20px; font-weight: bold"></div>
+
+        <div id="calendar" class="calendar"></div>
+      </div>
+    </div>
+  </div>
+ <script th:inline="javascript">
+        // Pass distinct days from the backend to JavaScript
+        const distinctDays = /*[[${distinctDays}]]*/ []; // Example: [1, 5, 10, 15]
+
+        // Initialize the calendar
+        const currentDate = new Date();
+        function initializeCalendar() {
+            const calendar = document.getElementById("calendar");
+
+            // Get current month and year
+            const month = currentDate.getMonth();
+            const year = currentDate.getFullYear();
+
+            // First day of the month
+            const firstDay = new Date(year, month, 1).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+
+            // Clear previous calendar cells
+            calendar.innerHTML = "";
+
+            // Add empty cells before the first day
+            for (let i = 0; i < firstDay; i++) {
+                const emptyCell = document.createElement("div");
+                calendar.appendChild(emptyCell);
+            }
+
+            // Add days of the month
+            for (let day = 1; day <= lastDate; day++) {
+                const dayCell = document.createElement("div");
+                dayCell.textContent = day;
+
+                // Highlight days that are present in distinctDays
+                if (distinctDays.includes(day)) {
+                    dayCell.classList.add("checked"); // Green for days with attendance
+                }
+
+                // Highlight today's date
+                if (day === currentDate.getDate()) {
+                    dayCell.classList.add("today");
+                }
+
+                calendar.appendChild(dayCell);
+            }
+        }
+
+        // Initialize the calendar on page load
+        window.onload = initializeCalendar;
+    </script>
+
+
+    <!-- Get In Touch Section Begin -->
+    <div class="gettouch-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="gt-text">
+              <i class="fa fa-map-marker"></i>
+              <p>
+                Lalitpur<br />
+                Nepal
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="gt-text">
+              <i class="fa fa-mobile"></i>
+              <ul>
+                <li>9876543210</li>
+                <li>9779853426</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="gt-text email">
+              <i class="fa fa-envelope"></i>
+              <p>Support.gymcenter@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Get In Touch Section End -->
+
+    <!-- Footer Section Begin -->
+    <section class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="fs-about">
+              <div class="fa-logo">
+                <a href="#"><img src="img/logo.png" alt="" /></a>
+              </div>
+              <p></p>
+              <div class="fa-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-envelope-o"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="fs-widget">
+              <h4>Useful links</h4>
+           		<ul>
+	                <li><a href="about-us">About</a></li>
+	                <li><a href="blog">Blog</a></li>
+	                <li><a href="classes">Classes</a></li>
+	                <li><a href="contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="fs-widget">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">My account</a></li>
+                <li><a href="#">Subscribe</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="fs-widget">
+              <h4>Tips & Guides</h4>
+              <div class="fw-recent">
+                <h6>
+                  <a href="#"
+                    >Physical fitness may help prevent depression, anxiety</a
+                  >
+                </h6>
+                <ul>
+                  <li>3 min read</li>
+                  <li>20 Comment</li>
+                </ul>
+              </div>
+              <div class="fw-recent">
+                <h6>
+                  <a href="#"
+                    >Fitness: The best exercise to lose belly fat and tone
+                    up...</a
+                  >
+                </h6>
+                <ul>
+                  <li>3 min read</li>
+                  <li>20 Comment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+          <input type="text" id="search-input" placeholder="Search here....." />
+        </form>
+      </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

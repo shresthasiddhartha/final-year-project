@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Edit Membership Dashboard</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />
+    <link rel="stylesheet" href="assets/css/ready.css" />
+    <link rel="stylesheet" href="assets/css/demo.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+            <div class="logo-header">
+                <a href="index.html" class="logo"> Admin </a>
+            </div>
+            <nav class="navbar navbar-header navbar-expand-lg">
+                <div class="container-fluid">
+                    <form class="navbar-left navbar-form nav-search mr-md-3" action="">
+                        <div class="input-group">
+                            <input type="text" placeholder="Search ..." class="form-control" />
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="scrollbar-inner sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a href="index.html">
+                            <i class="la la-dashboard"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manageUser.html">
+                            <i class="la la-users"></i>
+                            <p>Manage User</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manageMembership.html">
+                            <i class="la la-cc-mastercard"></i>
+                            <p>Membership</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminLogin.html">
+                            <i class="la la-power-off"></i>
+                            <p>Log Out</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Panel -->
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <h4 class="page-title">Edit User Membership Details</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">User Membership Details</div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Form Start -->
+                                    <form action="editMembership.php" method="POST">
+                                        <div class="form-group">
+                                            <label for="membershipId">Membership Id</label>
+                                            <input type="text" class="form-control input-round" id="membershipId"
+                                                name="membershipId" value="1" disabled />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="userName">User Name</label>
+                                            <input type="text" class="form-control input-round" id="userName"
+                                                name="userName" value="John Doe" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="membershipName">Membership Name</label>
+                                            <input type="text" class="form-control input-round" id="membershipName"
+                                                name="membershipName" value="Class drop-in" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="duration">Duration</label>
+                                            <input type="text" class="form-control input-round" id="duration"
+                                                name="duration" value="Single Class" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control input-round" id="email" name="email"
+                                                value="johndoe@example.com" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact">Contact</label>
+                                            <input type="text" class="form-control input-round" id="contact"
+                                                name="contact" value="(123) 456-7890" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="paymentStatus">Payment Status</label>
+                                            <select class="form-control" id="paymentStatus" name="paymentStatus">
+                                                <option value="Paid" selected>Paid</option>
+                                                <option value="Unpaid">Unpaid</option>
+                                            </select>
+                                        </div>
+                                        <div class="card-action">
+                                            <button type="submit" class="btn btn-success">
+                                                Save Membership
+                                            </button>
+                                            <a href="manageMembership.html">
+                                                <button class="btn btn-danger">Cancel</button>
+                                              </a>
+                                        </div>
+                                    </form>
+                                    <!-- Form End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/core/jquery.3.2.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="assets/js/ready.min.js"></script>
+</body>
+
+</html>

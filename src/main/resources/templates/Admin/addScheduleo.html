@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form action="addSchedule" method="post">
+        <h2>Schedule Form</h2>
+        
+        <!-- Day -->
+        <label for="day">Day</label>
+        <select id="day" name="day" required>
+            <option value="">Select Day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        
+        <!-- Time Slot -->
+        <label for="timeSlot">Time Slot</label>
+        <select id="timeSlot" name="timeSlot" required>
+            <option value="">Select Time Slot</option>
+            <option value="6:00 AM - 8:00 AM">6:00 AM - 8:00 AM</option>
+            <option value="10:00 AM - 12:00 AM">10:00 AM - 12:00 AM</option>
+            <option value="5:00 PM - 7:00 PM">5:00 PM - 7:00 PM</option>
+            <option value="7:00 PM - 9:00 PM">7:00 PM - 9:00 PM</option>
+        </select>
+        
+        <!-- Activity -->
+        <label for="activity">Activity</label>
+        <select id="activity" name="activity" required>
+            <option value="">Select Activity</option>
+            <!-- Fitness Tips -->
+            <optgroup label="Fitness Tips">
+                <option value="Stretching">Stretching</option>
+                <option value="Warm-Up Exercises">Warm-Up Exercises</option>
+                <option value="Cool-Down Techniques">Cool-Down Techniques</option>
+            </optgroup>
+            <!-- Motivation -->
+            <optgroup label="Motivation">
+                <option value="Group Workouts">Group Workouts</option>
+                <option value="Fitness Challenges">Fitness Challenges</option>
+                <option value="Goal Setting">Goal Setting</option>
+            </optgroup>
+            <!-- Workouts -->
+            <optgroup label="Workouts">
+                <option value="Yoga">Yoga</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Strength Training">Strength Training</option>
+                <option value="Zumba">Zumba</option>
+                <option value="Pilates">Pilates</option>
+                <option value="HIIT">HIIT</option>
+                <option value="Spin Class">Spin Class</option>
+                <option value="Aerobics">Aerobics</option>
+            </optgroup>
+        </select>
+        
+        <!-- Trainer -->
+        <label for="trainer">Trainer</label>
+        <select id="trainer" name="trainer" required>
+            <option value="">Select Trainer</option>
+            <option value="John Doe">John Doe</option>
+            <option value="Jane Smith">Jane Smith</option>
+            <option value="Mike Johnson">Mike Johnson</option>
+            <option value="Emily Davis">Emily Davis</option>
+            <option value="Chris Brown">Chris Brown</option>
+        </select>
+        
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

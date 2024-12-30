@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Gym Template" />
+    <meta name="keywords" content="Gym, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zest Fitness</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/barfiller.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="css/membershipForm.css"> -->
+  </head>
+
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+      <div class="canvas-close">
+        <i class="fa fa-close"></i>
+      </div>
+      <div class="canvas-search search-switch">
+        <i class="fa fa-search"></i>
+      </div>
+     <nav class="canvas-menu mobile-menu">
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="membership">Membership</a></li>
+          <li><a href="attendance">Attendance</a></li>
+          <li>
+            <a href="#">Activities</a>
+            <ul class="dropdown">
+              <li><a href="class-timetable">Schedules</a></li>
+              <li><a href="bmi-calculator">BMI Calculator</a></li>
+              <li><a href="activities">My Activities</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Workout</a>
+            <ul class="dropdown">
+              <li><a href="video">Video Tutorial</a></li>
+              <li><a href="class-timetable">Workouts</a></li>
+              <li><a href="diet">Diet</a></li>
+              <!-- <li><a href="./404.html">404</a></li> -->
+            </ul>
+          </li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="profile"> Profile </a></li>
+        </ul>
+      </nav>
+      <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu Section End -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="logo">
+              <a href="./index.html">
+                <img src="img/logo.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="nav-menu">
+              <ul>
+                <li><a href="index">Home</a></li>
+                <li><a href="membership">Membership</a></li>
+                <li><a href="attendance">Attendance</a></li>
+                <li>
+                  <a href="#">Activities</a>
+                  <ul class="dropdown">
+                    <li><a href="class-timetable">Schedules</a></li>
+                    <li><a href="bmi-calculator">BMI Calculator</a></li>
+                    <li><a href="activities">My Activities</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Workout</a>
+                  <ul class="dropdown">
+                    <li><a href="video">Video Tutorial</a></li>
+                    <li><a href="class-timetable">Workouts</a></li>
+                    <li><a href="diet">Diet</a></li>
+                    <!-- <li><a href="./404.html">404</a></li> -->
+                  </ul>
+                </li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="profile"> Profile </a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3">
+            <div class="top-option">
+              <div class="to-search search-switch">
+                <i class="fa fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="canvas-open">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+      <div class="hs-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="/img/banner/big_offer.png">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 offset-lg-6">
+                <div class="hi-text">
+                  <span>Shape your body</span>
+                  <h1><strong>Membership</strong></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Membership Form Begin -->
+    <section id="membershipForm" class="membership-form spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title">
+              <h2 style="color: black"></h2>
+              <span>Membership Form</span>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <form action="membershipForm" method="post" class="membership-form">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-control"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  class="form-control"
+                  placeholder="Enter your address"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" class="form-control" name="gender" required>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+			  <div class="form-group">
+			    <label for="plan">Choose Plan</label>
+			    <select id="plan" name="membershipPlan" class="form-control" required>
+			        <option value="" disabled selected>Select a plan</option>
+			        <!-- Loop through the membershipDetailList -->
+			        <th:block th:each="membership : ${membershipDetailList}">
+			            <option th:value="${membership.membershipName + '-'+'$'+ membership.price + '-' + membership.duration}">
+			                <span th:text="${membership.membershipName}"></span> - $
+			                <span th:text="${membership.price}"></span> - 
+			                <span th:text="${membership.duration}"></span>
+			            </option>
+			        </th:block>
+			    </select>
+			</div>
+
+              <div class="form-group">
+                <label for="message">Additional Message</label>
+                <textarea
+                  id="message"
+                  class="form-control"
+                  rows="5"
+                  placeholder="Enter any additional information"
+                ></textarea>
+              </div>
+              <button type="submit" class="primary-btn">
+                Submit for Membership
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Membership Form End -->
+
+    <!-- Get In Touch Section Begin -->
+    <div class="gettouch-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="gt-text">
+              <i class="fa fa-map-marker"></i>
+              <p>
+                333 Middle Winchendon Rd, Rindge,<br />
+                NH 03461
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="gt-text">
+              <i class="fa fa-mobile"></i>
+              <ul>
+                <li>125-711-811</li>
+                <li>125-668-886</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="gt-text email">
+              <i class="fa fa-envelope"></i>
+              <p>Support.gymcenter@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Get In Touch Section End -->
+
+    <!-- Footer Section Begin -->
+    <section class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="fs-about">
+              <div class="fa-logo">
+                <a href="#"><img src="img/logo.png" alt="" /></a>
+              </div>
+              <p></p>
+              <div class="fa-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-envelope-o"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="fs-widget">
+              <h4>Useful links</h4>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="fs-widget">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">My account</a></li>
+                <li><a href="#">Subscribe</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="fs-widget">
+              <h4>Tips & Guides</h4>
+              <div class="fw-recent">
+                <h6>
+                  <a href="#"
+                    >Physical fitness may help prevent depression, anxiety</a
+                  >
+                </h6>
+                <ul>
+                  <li>3 min read</li>
+                  <li>20 Comment</li>
+                </ul>
+              </div>
+              <div class="fw-recent">
+                <h6>
+                  <a href="#"
+                    >Fitness: The best exercise to lose belly fat and tone
+                    up...</a
+                  >
+                </h6>
+                <ul>
+                  <li>3 min read</li>
+                  <li>20 Comment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+          <input type="text" id="search-input" placeholder="Search here....." />
+        </form>
+      </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

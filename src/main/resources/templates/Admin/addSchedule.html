@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Add Schedule Dashboard</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="admin/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />
+    <link rel="stylesheet" href="admin/css/ready.css" />
+    <link rel="stylesheet" href="admin/css/demo.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Main Header -->
+        <div class="main-header">
+            <div class="logo-header">
+                <a href="index.html" class="logo"> Admin </a>
+                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+                    data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <button class="topbar-toggler more">
+                    <i class="la la-ellipsis-v"></i>
+                </button>
+            </div>
+            <nav class="navbar navbar-header navbar-expand-lg">
+                <div class="container-fluid">
+                    <form class="navbar-left navbar-form nav-search mr-md-3" action="">
+                        <div class="input-group">
+                            <input type="text" placeholder="Search ..." class="form-control" />
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="la la-search search-icon"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
+                                aria-expanded="false">
+                                <img src="admin/img/profile.jpg" alt="user-img" width="36" class="img-circle" />
+                                <span>Admin</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li>
+                                    <div class="user-box">
+                                        <div class="u-img">
+                                            <img src="admin/img/profile.jpg" alt="user" />
+                                        </div>
+                                        <div class="u-text">
+                                            <h4>Admin</h4>
+                                            <p class="text-muted">admin@gmail.com</p>
+                                            <a href="adminProfile.html" class="btn btn-rounded btn-danger btn-sm">View
+                                                Profile</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="adminProfile.html"><i class="ti-user"></i> My Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="adminLogin.html"><i class="fa fa-power-off"></i>
+                                    Logout</a>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="scrollbar-inner sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a href="adminDash">
+                            <i class="la la-dashboard"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manageUser">
+                            <i class="la la-users"></i>
+                            <p>Manage User</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manageTrainer">
+                            <i class="la la-user"></i>
+                            <p>Manage Trainer</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manageAttendance">
+                            <i class="la la-table"></i>
+                            <p>Attendance</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manageMembership">
+                            <i class="la la-cc-mastercard"></i>
+                            <p>Membership</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manageDiet">
+                            <i class="la la-coffee"></i>
+                            <p>Diet</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+						<a href="manageSchedule">
+							<i class="la la-calendar"></i>
+							<p>Manage Schedule</p>
+						</a>
+					</li>
+                    <li class="nav-item">
+                        <a href="manageVideo">
+                            <i class="la la-file"></i>
+                            <p>Manage Video</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminLogout">
+                            <i class="la la-power-off"></i>
+                            <p>Log Out</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Main Panel -->
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <h4 class="page-title">Add Schedule Details</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Schedule Details</div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Form Start -->
+                                    <form action="addSchedule" method="post">
+                                        <!-- Day -->
+                                        <div class="form-group">
+                                            <label for="day">Day</label>
+                                            <select id="day" name="day" class="form-control input-round" required>
+                                                <option value="">Select Day</option>
+                                                <option value="Monday">Monday</option>
+                                                <option value="Tuesday">Tuesday</option>
+                                                <option value="Wednesday">Wednesday</option>
+                                                <option value="Thursday">Thursday</option>
+                                                <option value="Friday">Friday</option>
+                                                <option value="Saturday">Saturday</option>
+                                                <option value="Sunday">Sunday</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Time Slot -->
+                                        <div class="form-group">
+                                            <label for="timeSlot">Time Slot</label>
+                                            <select id="timeSlot" name="timeSlot" class="form-control input-round"
+                                                required>
+                                                <option value="">Select Time Slot</option>
+                                                <option value="6:00 AM - 8:00 AM">6:00 AM - 8:00 AM</option>
+                                                <option value="10:00 AM - 12:00 AM">10:00 AM - 12:00 AM</option>
+                                                <option value="5:00 PM - 7:00 PM">5:00 PM - 7:00 PM</option>
+                                                <option value="7:00 PM - 9:00 PM">7:00 PM - 9:00 PM</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Activity -->
+                                        <div class="form-group">
+                                            <label for="activity">Activity</label>
+                                            <select id="activity" name="activity" class="form-control input-round"
+                                                required>
+                                                <option value="">Select Activity</option>
+                                                <!-- Fitness Tips -->
+                                                <optgroup label="Fitness Tips">
+                                                    <option value="Stretching">Stretching</option>
+                                                    <option value="Warm-Up Exercises">Warm-Up Exercises</option>
+                                                    <option value="Cool-Down Techniques">Cool-Down Techniques</option>
+                                                </optgroup>
+                                                <!-- Motivation -->
+                                                <optgroup label="Motivation">
+                                                    <option value="Group Workouts">Group Workouts</option>
+                                                    <option value="Fitness Challenges">Fitness Challenges</option>
+                                                    <option value="Goal Setting">Goal Setting</option>
+                                                </optgroup>
+                                                <!-- Workouts -->
+                                                <optgroup label="Workouts">
+                                                    <option value="Yoga">Yoga</option>
+                                                    <option value="Cardio">Cardio</option>
+                                                    <option value="Strength Training">Strength Training</option>
+                                                    <option value="Zumba">Zumba</option>
+                                                    <option value="Pilates">Pilates</option>
+                                                    <option value="HIIT">HIIT</option>
+                                                    <option value="Spin Class">Spin Class</option>
+                                                    <option value="Aerobics">Aerobics</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+
+                                        <!-- Trainer -->
+                                       <div class="form-group">
+										    <label for="trainer">Trainer</label>
+										    <select id="trainer" name="trainer" class="form-control input-round" required>
+										        <option value="">Select Trainer</option>
+										        <!-- Dynamically generate options -->
+										        <th:block th:each="trainer : ${trainers}">
+										            <option th:value="${trainer.name}" th:text="${trainer.name}"></option>
+										        </th:block>
+										    </select>
+										</div>
+
+                                        <!-- Submit Button -->
+                                        <div class="card-action">
+                                            <button type="submit" class="btn btn-success">Submit</button>
+                                            <button type="reset" class="btn btn-danger">Cancel</button>
+                                        </div>
+                                    </form>
+                                    <!-- Form End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="admin/js/core/jquery.3.2.1.min.js"></script>
+    <script src="admin/js/core/popper.min.js"></script>
+    <script src="admin/js/core/bootstrap.min.js"></script>
+    <script src="admin/js/ready.min.js"></script>
+</body>
+
+</html>
